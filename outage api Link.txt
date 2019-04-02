@@ -1,0 +1,2 @@
+https://github.ameren.com/Ameren/outage-status-api
+check ubuntu-java repo under ameren gh

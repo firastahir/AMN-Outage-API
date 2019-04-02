@@ -1,0 +1,30 @@
+{
+	"family": "outage-status-api",
+	"containerDefinitions": [
+		{
+			"image": "991821860035.dkr.ecr.us-east-1.amazonaws.com/outage-status-api",
+			"name": "outage-status-api",
+			"cpu": 10,
+			"memory": 1536,
+			"essential": true,
+			"logConfiguration": {
+				"logDriver": "awslogs",
+				"options": {
+					"awslogs-group": "dev-outage-status-api-log",
+					"awslogs-region": "us-east-1"
+				}
+			},
+			"portMappings": [
+				{
+					"containerPort": 8910,
+					"hostPort": 8910
+				}
+			],
+			"environment": [
+			{"name": "configRepo","value": "outagestatusapi.development"},
+   			{"name": "configURL","value": "https://dev-outage.ece.ameren.com/outageconfigserver/api"}, 
+   			{"name": "region","value": "us-east-1"}
+			]
+		}
+	]
+}

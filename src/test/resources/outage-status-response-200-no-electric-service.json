@@ -1,0 +1,5 @@
+{
+  "statusCode": 300,
+  "message": "Message returned from CSS REST API (SUPP) is Informational This location does not have electric service.",
+  "hasError": true
+}

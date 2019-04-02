@@ -1,0 +1,110 @@
+swagger: "2.0"
+info:
+  description: "This is a sample server.  This API definition was built using Swagger Editor at [https://editor.swagger.io/](https://editor.swagger.io/). \nFor this sample, you can use the api key `special-key` to test the authorization filters."
+  version: "1.0.0"
+  title: "Outage Status API"
+#  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "outagedevteam@ameren.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "aws.ameren.com"
+basePath: "/status/api"
+
+tags:
+- name: "Status"
+  description: "Outage Status API"
+  externalDocs:
+    description: "Find out more"
+    url: "http://outagemap.ameren.com"
+schemes:
+- "https"
+
+paths:
+
+  /accounts/{account}:
+    get:
+      tags:
+      - "Status"
+      summary: "Returns outage status for a customer"
+      description: ""
+      operationId: "statusRequest"
+
+      produces:
+      - "application/json"
+
+      parameters:
+      - in: "path"
+        name: "account"
+        required: true
+        type: string
+
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/OutageStatus"
+definitions:
+  OutageStatus:
+    title: "Status of a customer outage"
+    description: ""
+    properties:
+      knownOutage:
+        title: "Indicates if power is on at premise"
+        type: boolean
+      account:
+        title: "Bill Account Number of customer responding"
+        type: "string"
+        minLength: 10
+        maxLength: 10
+        example: "0100500104"
+      reported:
+        title: "Indicates if this customer already reported this outage"
+        type: boolean
+      state: 
+        type: string
+        example: "MO"
+      postalCode:
+        type: string
+        example: "63141"
+      houseNumber:
+        type: string
+        example: "1234"
+      esrt:
+        title: "Estimated Safe Restoration Time"
+        type: string
+        format: date-time
+      customersImpacted:
+        title: "Number of customers affected by outage"
+        type: integer
+        format: int32
+      cause:
+        title: "Cause of outage"
+        type: string
+      outageStatus:
+        title: "Crew status"
+        type: string
+      outageDateTime:
+        type: string
+        format: date-time
+      orderNumber:
+        title: "Outage order Number"
+        type: string
+      esrtCalcMethod:
+        title: "Indicates if the ESRT was entered by a person"
+        type: string
+        enum: ["Manual", "Auto"]
+      restoredDateTime:
+        title: "Timestamp of outage restoration"
+        type: string
+        format: date-time
+      lastUpdatedDateTime:
+        title: "Timestamp of last update"
+        type: string
+        format: date-time
+      message:
+        title: "Message response"
+        type: string
+
+  

@@ -1,0 +1,29 @@
+{
+  "statusCode": 200,
+  "message": "CSS REST API Call was successful (SUPP)",
+  "hasError": false,
+  "data": {
+    "outage": {
+      "isPowerOn": false,
+      "billAccountNumber": "0000012345",
+      "premiseNumber": "1234",
+      "companyCode": 19,
+      "state": "IL",
+      "postalCode": "12345",
+      "houseNumber": "123",
+      "phoneNumber": "6185551234",
+      "callBackNumber": "2175556789",
+      "transformerID": "11111111111",
+      "outageStatusDescription": "Order has been received",
+      "outageCauseDescription": "We are assessing the cause.",
+      "outageDateTime": "2019-03-15T03:45:00",
+      "estimatedRestorationDateTime": "0001-01-01T00:00:00",
+      "originalEstimatedResorationDateTime": "2019-03-15T06:00:00",
+      "affectedNumberOfCustomers": 1,
+      "restoredDateTime": "0001-01-01T00:00:00",
+      "reportedNotProcessed": false,      
+      "lastUpdatedDateTime": "2019-03-19T17:54:17.27",
+      "reportAlert": true
+    }
+  }
+}

@@ -1,0 +1,1 @@
+FROM 991821860035.dkr.ecr.us-east-1.amazonaws.com/ubuntu-java:latest
